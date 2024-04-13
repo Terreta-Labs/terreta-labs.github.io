@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Coming Soon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Clicker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Coming Soon</h1>
+
+    <h1>Orange Clicker</h1>
+
+    <section id="clickerSection">
+        <img id="clicker" src="images/orange.png" alt="Click Me!">
+        <p>Total Clicks: <span id="clickCount">0</span></p>
+    </section>
+
+    <script>
+        const clicker = document.getElementById('clicker');
+        const clickCountElement = document.getElementById('clickCount');
+        let clickCount = 0;
+
+        function handleClick() {
+            clickCount++;
+            clickCountElement.textContent = clickCount;
+        }
+
+        clicker.addEventListener('click', handleClick);
+    </script>
+
+    <footer>
+        <p>Pau | Mario | Luismi</p>
+        <p>&copy; Terreta Labs 2024</p>
+    </footer>
+
 </body>
 </html>
