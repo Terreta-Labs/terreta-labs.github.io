@@ -18,8 +18,13 @@ footer {
     width: 100%;
 }
 #clickerSection {
-    text-align: center;
+    position: absolute;
+    text-align: left;
     
+}
+#buySection{
+    text-align: right;
+    margin-right: 30px;
 }
 @keyframes rotateImage {
     from {
