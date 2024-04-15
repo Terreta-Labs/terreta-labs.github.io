@@ -1,11 +1,12 @@
 const clicker = document.getElementById('clicker');
 const clickCountElement = document.getElementById('clickCount');
 let clickCount = 0;
-let orangesPerSecond=0;
+let orangesTotal=0;
+let clickRate=1.00;
  function handleClick() {
             
-  clickCount+=1.00;
-  clickCountElement.textContent = clickCount;
+  clickCount+=clickRate;
+  clickCountElement.textContent = clickCount.toFixed(2);
   }
 
         clicker.addEventListener('click', handleClick);
@@ -20,9 +21,11 @@ function totalPerSecond() {
             clickCountElement.textContent = clickCount.toFixed(2);
             orangesPerSecond=(workerCount*workerRate);
             clickCount+=orangesPerSecond;
+            countOrangesPerSecond.textContent=  (workerCount*workerRate).toFixed(2);
             
 }
-let orangesPerSecondR= orangesPerSecond.toFixed(2);
+let orangesTotalR= orangesTotal.toFixed(2);
+
 const countOrangesPerSecond= document.getElementById('mostrarOrangesPerSecond');
 const workerButton = document.getElementById('workerButton');
 workerButton.addEventListener('click', addWorker)
