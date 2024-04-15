@@ -1,16 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(255, 206, 142);
+    background-color: rgb(217, 178, 128);
 }
 h1 {
     text-align: center;
     font-size: 60px;
 }
 .title {
-    color: #ea8928;
+    color: #f48f29;
 }
 footer {
-    background-color: #ff7e00;
+    background-color: #e67606;
     color: white;
     text-align: center;
     position: fixed;
@@ -20,6 +20,14 @@ footer {
 #clickerSection {
     text-align: center;
     
+}
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 #clicker {
     width: 256px;
@@ -31,13 +39,14 @@ footer {
     border: none;
     overflow: hidden;
     outline: none;
-    
+    animation: rotateImage 50s infinite linear;
     background-image: url(/images/orange.png);
     background-size: cover;
 }
+
 #clicker:active{
-    width: 266px;
-    height: 266px;
+    width: 259px;
+    height: 259px;   
 }
 #clicker img {
     width: 100%;
