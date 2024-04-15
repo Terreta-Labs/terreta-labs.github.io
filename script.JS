@@ -14,8 +14,10 @@ let clickRate=1.00;
 let workerCount = 0;
 let workerClickRate = 1000;
 let workerRate=0.2;
+const countWorkerCount= document.getElementById('countWorkerCount');
 function addWorker() {
       workerCount++;
+      countWorkerCount.textContent=workerCount;
 }
 function totalPerSecond() {
             clickCountElement.textContent = clickCount.toFixed(2);
