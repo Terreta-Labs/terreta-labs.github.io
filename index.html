@@ -8,24 +8,15 @@
 </head>
 <body>
 
-    <h1>Orange Clicker</h1>
-
+    <h1><a class = "title">Orange</a></b> Clicker</h1>
+    
     <section id="clickerSection">
         <img id="clicker" src="images/orange.png" alt="Click Me!">
         <p>Total Clicks: <span id="clickCount">0</span></p>
     </section>
-
-    <script>
-        const clicker = document.getElementById('clicker');
-        const clickCountElement = document.getElementById('clickCount');
-        let clickCount = 0;
-
-        function handleClick() {
-            clickCount++;
-            clickCountElement.textContent = clickCount;
-        }
-
-        clicker.addEventListener('click', handleClick);
+    
+    <script src = 'script.JS'>
+        
     </script>
 
     <footer>
