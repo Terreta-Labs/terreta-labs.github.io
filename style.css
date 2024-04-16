@@ -18,6 +18,9 @@ footer {
     bottom: 0;
     width: 100%;
 }
+#NameCount {
+    margin-left: 71px;
+}
 #clickerSection {
     margin-left: 20px;
     position: absolute;
