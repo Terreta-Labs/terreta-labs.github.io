@@ -2,7 +2,6 @@ const clicker = document.getElementById('clicker');
 const orangeCountTotal = document.getElementById('orangesTotal');
 let orangesTotal = 0;
 let orangesTotalR= orangesTotal.toFixed(2);
-
 let clickRate=1.00;
  function handleClick() {
             
@@ -26,8 +25,6 @@ function addWorker() {
             countWorkerCount.textContent=workerCount;
             workerPrice = Math.ceil(workerPrice * 1.20);
       }
-      
-      
 }
 function totalPerSecond() {
             orangeCountTotal.textContent = orangesTotal.toFixed(2);
