@@ -8,6 +8,9 @@ const  spanishWorker = {
       rate : 0.2,
       price : 10
 }
+const taxesSpanishWorker={
+      taxes:(spanishWorker.rate*spanishWorker.count*30)
+}
 const inmigrantWorker = {
       count : 0,
       rate : 1,
@@ -37,8 +40,12 @@ function totalPerSecond() {
             countOrangesPerSecond.textContent=  (spanishWorker.count*spanishWorker.rate).toFixed(2);
             
 }
+function trabajador(){
+
+}
 
 const countOrangesPerSecond= document.getElementById('OrangesPerSecond');
 const workerButton = document.getElementById('Button');
 workerButton.addEventListener('click', addWorker)
 setInterval(totalPerSecond, 1000); // 1000ms  = 1s 
+setInterval(taxesSpanishWorker,60000)
