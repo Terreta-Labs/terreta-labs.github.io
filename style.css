@@ -29,7 +29,10 @@ footer {
 }
 #buySection{
     text-align: right;
+    
     margin-right: 30px;
+    margin-left: 75%;
+    background-image: url("images/Sin\ título.jpg");
 }
 @keyframes rotateImage {
     from {

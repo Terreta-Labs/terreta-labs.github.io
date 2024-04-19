@@ -8,6 +8,9 @@ const  spanishWorker = {
       rate : 0.2,
       price : 10
 }
+const priceSpanish = document.getElementById('priceSpanish');
+priceSpanish.textContent= spanishWorker.price;
+
 const taxesSpanishWorker={
       taxes:(spanishWorker.rate*spanishWorker.count*30)
 }
@@ -16,6 +19,9 @@ const inmigrantWorker = {
       rate : 1,
       price : 15
 }
+const priceInmigrant = document.getElementById('priceInmigrant');
+priceInmigrant.textContent= inmigrantWorker.price;
+
  function handleClick() {           
   orangesTotal++; // Clicker rate 1
   orangeCount.textContent = orangesTotal.toFixed(2);
@@ -31,24 +37,28 @@ function addWorker() {
             orangesTotal -= spanishWorker.price;
             WorkerTotal.textContent=spanishWorker.count;
             spanishWorker.price = Math.ceil(spanishWorker.price * 1.20);
+            priceSpanish.textContent= spanishWorker.price;
+
       }
 }
 
 const WorkerTotal2 = document.getElementById('WorkerCount2');
 function addWorker2() {
+      
       if (orangesTotal >= inmigrantWorker.price) {
             inmigrantWorker.count++;
             orangesTotal -= inmigrantWorker.price;
             WorkerTotal2.textContent=inmigrantWorker.count;
-            inmigrantWorker.price = Math.ceil(inmigrantWorker.price * 1.20);
+            inmigrantWorker.price = Math.ceil(inmigrantWorker.price * 1.10);
+            priceInmigrant.textContent= inmigrantWorker.price;
       }
 }
 
 function totalPerSecond() {
             orangeCount.textContent = orangesTotal.toFixed(2);
-            spanishTotal = spanishWorker.count*spanishWorker.rate;
-            inmigrantTotal = inmigrantWorker.count*inmigrantWorker.rate;
-            orangesPerSecond= spanishTotal + inmigrantTotal;
+            spanishTotal = (spanishWorker.count*spanishWorker.rate);
+            inmigrantTotal = (inmigrantWorker.count*inmigrantWorker.rate);
+            orangesPerSecond= (spanishTotal + inmigrantTotal);
             orangesTotal+=orangesPerSecond;
             countOrangesPerSecond.textContent= orangesPerSecond;
             
@@ -59,6 +69,5 @@ const workerButton = document.getElementById('Button');
 workerButton.addEventListener('click', addWorker)
 const workerButton2 = document.getElementById('Button2');
 workerButton2.addEventListener('click', addWorker2)
-
 setInterval(totalPerSecond, 1000); // 1000ms  = 1s 
 setInterval(taxesSpanishWorker,60000)
