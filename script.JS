@@ -30,29 +30,21 @@ priceInmigrant.textContent= inmigrantWorker.price;
         clicker.addEventListener('click', handleClick);
 
 const WorkerTotal = document.getElementById('WorkerCount');
-function addWorker() {
-      if (orangesTotal >= spanishWorker.price) {
+
+// Add a new worker to the game depending of the worker
+function addWorker(worker, workerPrice,workerTotal) {
+      if (orangesTotal >= worker.price) {
             
-            spanishWorker.count++;
-            orangesTotal -= spanishWorker.price;
-            WorkerTotal.textContent=spanishWorker.count;
-            spanishWorker.price = Math.ceil(spanishWorker.price * 1.20);
-            priceSpanish.textContent= spanishWorker.price;
+            worker.count++;
+            orangesTotal -= worker.price;
+            workerTotal.textContent= worker.count;
+            worker.price = Math.ceil(worker.price * 1.20);
+            workerPrice.textContent= worker.price;
 
       }
 }
 
 const WorkerTotal2 = document.getElementById('WorkerCount2');
-function addWorker2() {
-      
-      if (orangesTotal >= inmigrantWorker.price) {
-            inmigrantWorker.count++;
-            orangesTotal -= inmigrantWorker.price;
-            WorkerTotal2.textContent=inmigrantWorker.count;
-            inmigrantWorker.price = Math.ceil(inmigrantWorker.price * 1.10);
-            priceInmigrant.textContent= inmigrantWorker.price;
-      }
-}
 
 function totalPerSecond() {
             orangeCount.textContent = orangesTotal.toFixed(2);
@@ -65,9 +57,20 @@ function totalPerSecond() {
 }
 
 const countOrangesPerSecond= document.getElementById('OrangesPerSecond');
-const workerButton = document.getElementById('Button');
-workerButton.addEventListener('click', addWorker)
-const workerButton2 = document.getElementById('Button2');
-workerButton2.addEventListener('click', addWorker2)
+
+/* Returns a list of all elements with the class name 'worker', and then loops through each element determining 
+if it is a Spanish worker or an immigrant worker based on the index */
+const workerButtons = document.querySelectorAll('.worker-button');
+workerButtons.forEach((button,index) => {
+      button.addEventListener('click', function() {
+            
+            const worker = index === 0 ? spanishWorker : inmigrantWorker; // Ternary operator if index is 0 then spanishWorker else inmigrantWorker
+            const priceElement = index === 0 ? priceSpanish : priceInmigrant;
+            const workerTotal = index === 0 ? WorkerTotal : WorkerTotal2;
+
+            addWorker(worker, priceElement, workerTotal);
+      });
+});
+
 setInterval(totalPerSecond, 1000); // 1000ms  = 1s 
 setInterval(taxesSpanishWorker,60000)
