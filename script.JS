@@ -46,9 +46,9 @@ function addWorker2() {
 
 function totalPerSecond() {
             orangeCount.textContent = orangesTotal.toFixed(2);
-            orangesPerSecond= spanishTotal + inmigrantTotal;
             spanishTotal = spanishWorker.count*spanishWorker.rate;
             inmigrantTotal = inmigrantWorker.count*inmigrantWorker.rate;
+            orangesPerSecond= spanishTotal + inmigrantTotal;
             orangesTotal+=orangesPerSecond;
             countOrangesPerSecond.textContent= orangesPerSecond;
             
