@@ -25,6 +25,27 @@ priceInmigrant.textContent= inmigrantWorker.price;
  function handleClick() {           
   orangesTotal++; // Clicker rate 1
   orangeCount.textContent = orangesTotal.toFixed(2);
+
+  //Create the +1 animation
+  let plusOne = document.createElement('div');
+  plusOne.textContent = '+1';
+  plusOne.style.color = 'white';
+  plusOne.style.position = 'absolute';
+  plusOne.style.left = `${event.clientX}px`;
+  plusOne.style.top = `${event.clientY}px`;
+  plusOne.style.fontSize = '20px';
+  plusOne.style.animation = 'onePlusAnimation 1s linear';
+  plusOne.style.zIndex = '10000';
+  plusOne.style.userSelect = 'none';
+  plusOne.style.pointerEvents = 'none';
+  
+
+  document.body.appendChild(plusOne);
+
+  plusOne.addEventListener('animationend', () => {
+      document.body.removeChild(plusOne);
+  });
+
   }
 
         clicker.addEventListener('click', handleClick);

@@ -42,6 +42,20 @@ footer {
         transform: rotate(360deg);
     }
 }
+
+@keyframes onePlusAnimation {
+    0% {
+        trasform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    
+}
+
 #clicker {
     width: 256px;
     height: 256px;
