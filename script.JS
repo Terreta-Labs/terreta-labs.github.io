@@ -95,3 +95,5 @@ workerButtons.forEach((button,index) => {
 
 setInterval(totalPerSecond, 1000); // 1000ms  = 1s 
 setInterval(taxesSpanishWorker,60000)
+
+

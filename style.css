@@ -1,17 +1,17 @@
 body {
     font-family: Arial, sans-serif;   
     margin-left: 0px;
-    background-color: rgb(217, 178, 128);
+    background-color: rgb(168, 140, 103);
 }
 h1 {
     text-align: center;
     font-size: 60px;
 }
 .title {
-    color: #f48f29;
+    color: #ffad14;
 }
 footer {
-    background-color: #e67606;
+    background-color: #e18932;
     color: white;
     text-align: center;
     position: fixed;
@@ -20,6 +20,7 @@ footer {
 }
 #NameCount {
     margin-left: 71px;
+    color :rgb(233, 224, 213);  
 }
 #clickerSection {
     margin-left: 20px;
@@ -29,10 +30,8 @@ footer {
 }
 #buySection{
     text-align: right;
-    
     margin-right: 30px;
     margin-left: 75%;
-    background-image: url("images/Sin\ título.jpg");
 }
 @keyframes rotateImage {
     from {
@@ -82,4 +81,67 @@ footer {
 }
 .price {
     color:beige
+}
+
+.woodenSign {
+    background: linear-gradient(90deg, #8B4513 0%, #A0522D 25%, #8B4513 50%, #A0522D 75%, #8B4513 100%);
+    border: 10px solid #8B4513;
+    color: aliceblue;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.woodenSign {
+    position: relative;
+    /* Rest of your styles... */
+}
+
+.worker-button {
+    background-color: rgb(12, 133, 24);
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    padding: 30px;
+    color:aliceblue;
+    border-radius: 40%;
+
+    background-color: #4CAF50; /* Un verde brillante */
+    border: none;
+    color: white;
+    padding: 15px 32px; /* Ajusta según tus necesidades */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Ajusta según tus necesidades */
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px; /* Ajusta según tus necesidades */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Sombra para dar profundidad */
+    transition-duration: 0.4s; /* Duración de la transición al pasar el mouse */
+}
+
+.worker-button:hover {
+    background-color: rgb(104, 140, 108);
+    color: white;
+}
+.woodenSign::before,
+.woodenSign::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 20px;
+    background: #917676;
+}
+
+.woodenSign::before {
+    left: -10px;
+}
+
+.woodenSign::after {
+    right: -10px;
 }
